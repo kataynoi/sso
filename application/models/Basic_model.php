@@ -12,7 +12,7 @@ class Basic_model extends CI_Model
             ->where('a.id','00452')
             ->join('employee b','a.boss = b.id')
             ->get('chospital a')
-            ->row();
+            ->row_array();
         return $rs;
     }
     public function get_office(){

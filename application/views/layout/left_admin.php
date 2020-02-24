@@ -32,6 +32,24 @@
                 <!-- /.nav-second-level -->
 
             </li>
+
+            <li>
+                <a href="<?php echo site_url('outsite') ?>"><i class="fa fa-bus fa-fw"></i> ข่าวประชาสัมพพันธ์ News<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="<?php echo site_url('admin_news_category') ?>"><i
+                                class="fa fa-angle-double-right  "></i> หมวดหมู่ ข่าว</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin_ita_ebit') ?>"><i
+                                class="fa fa-angle-double-right  "></i> เพิ่มข่าว</a>
+                    </li>
+
+                </ul>
+                <!-- /.nav-second-level -->
+
+            </li>
             <li>
                 <a href="<?php echo site_url('outsite') ?>"><i class="fa fa-bus fa-fw"></i> ITA<span
                         class="fa arrow"></span></a>
@@ -45,7 +63,7 @@
                                 class="fa fa-angle-double-right  "></i> EBIT</a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url('admin_ita_items') ?>"><i class="fa fa-angle-double-right  "></i>
+                        <a href="<?php echo site_url('admin_ita_ebit_items') ?>"><i class="fa fa-angle-double-right  "></i>
                         รายการ ITA</a>
                     </li>
 

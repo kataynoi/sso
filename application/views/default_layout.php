@@ -44,7 +44,7 @@
 <style>
     body {
         font-family: 'Kanit', sans-serif;
-        font-size: 90%;
+        font-size: 100%;
     }
 </style>
 <!-- Custom Fonts -->

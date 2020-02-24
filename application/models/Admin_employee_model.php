@@ -121,6 +121,9 @@ class Admin_employee_model extends CI_Model
             ->set("prename", $data["prename"])->set("name", $data["name"])->set("sex", $data["sex"])->set("cid", $data["cid"])->set("position", $data["position"])->set("employee_type", $data["employee_type"])->set("hospcode", $data["hospcode"])->set("tel", $data["tel"])->set("line", $data["line"])->set("facebook", $data["facebook"])->set("active", $data["active"])
             ->insert('employee');
 
+
+        $this->save_admin_user($this->db->insert_id(),$data);
+
         return $this->db->insert_id();
 
     }
@@ -142,5 +145,20 @@ class Admin_employee_model extends CI_Model
             ->get("employee")
             ->row();
         return $rs;
+    }
+    public function save_admin_user($id,$data)
+    {
+
+            $this->db->set('password', "PASSWORD('1234')", false);
+        $rs = $this->db
+            ->set("user_id", $id)
+            ->set("username", $id)
+            ->set("name", $data["name"])
+            ->set("user_type", '2')
+            //->set("email", $data["email"])
+            ->insert('users');
+
+        return $rs;
+
     }
 }

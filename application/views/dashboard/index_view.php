@@ -106,17 +106,17 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <div class="desc">This Is Description</div>
+                    <div class="desc">..</div>
                     <img src="<?php echo base_url()?>assets/images/banner/la.jpg" alt="Los Angeles" style="width:100%;">
                 </div>
 
                 <div class="item">
-                    <div class="desc">This Is Description</div>
+                    <div class="desc">..</div>
                     <img src="<?php echo base_url()?>assets/images/banner/chicago.jpg" alt="Chicago" style="width:100%;">
                 </div>
 
                 <div class="item">
-                    <div class="desc">This Is Description</div>
+                    <div class="desc">..</div>
                     <img src="<?php echo base_url()?>assets/images/banner/ny.jpg" alt="New york" style="width:100%;">
                 </div>
             </div>
@@ -137,22 +137,22 @@
 <br>
 <div class='row'>
     <div class='col col-lg-12'>
-        <div class="panel  panel-default w3-theme-l1">
-            <div class="panel-heading ">
+        <div class="panel  panel-default">
+            <div class="panel-heading w3-theme-l1">
                 ข่าวประชาสัมพันธ์
             </div>
             <div class="panel-body">
-
+vvvv
             </div>
         </div>
     </div>
     <div class='col col-lg-12'>
         <div class="panel panel-default ">
-            <div class="panel-heading w3-theme-l1">
+            <div class="panel-heading w3-theme-l2">
                 การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ (Integrity & Transparency Assessment : ITA)
             </div>
             <div class="panel-body">
-                <table class=" table table-responsive">
+                <table class=" table table-striped">
                     <thead>
                     <th>#</th>
                     <th>EBIT</th>
@@ -161,7 +161,9 @@
                     <tbody>
                         <?php
                         foreach($ita_ebit as $r){
-                            echo "<tr><td>$r->id</td><td>$r->name</td><td><i class='fa fa-arrow-circle-down'></i></td></tr>";
+                            echo "<tr><td>$r->id</td><td>$r->name</td>";
+                            echo "<td><button class='btn' data-btn='btn_expand' data-id='$r->id'><i class='fa fa-arrow-circle-down'  ></i></button></td></tr>";
+                            echo "<tr class='tr2' ><td></td><td>#</td><td colspan='2'>dddddd</td></tr>";
                         }
                         ?>
                     </tbody>
@@ -170,10 +172,9 @@
             </div>
         </div>
     </div>
-
     <div class='col col-lg-12'>
         <div class="panel  panel-default">
-            <div class="panel-heading w3-theme-l1">
+            <div class="panel-heading w3-theme-l3">
                 ผลการดำเนินงาน
             </div>
             <div class="panel-body">
@@ -182,3 +183,5 @@
         </div>
     </div>
 </div>
+
+<script src="<?php echo base_url() ?>assets/apps/js/dashboard.js" charset="utf-8"></script>
