@@ -42,7 +42,8 @@ if ( ! function_exists('version'))
 {
     function version()
     {
-        $version=' สำนักงานสาธารณสุขอำเภอพยัคฆภูมิพิสัย';
+        $ci = get_instance();
+        $version=$ci->config->item('site_name');
 
         return $version;
 

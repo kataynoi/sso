@@ -2,9 +2,9 @@
     <div class="panel panel-default">
 
         <div class="panel-body text-center">
-            <img src="<?php echo base_url() . 'assets/images/users/' . $this->session->userdata('boss') . '.jpg'; ?>"
+            <img src="<?php echo base_url() . 'assets/images/users/' . $this->config->item('boss_id') . '.jpg'; ?>"
                  class="img-responsive img-rounded" style="width:204px;height:auto;">
-            <br> <?php echo $this->session->userdata('name') . "<br>" . $this->session->userdata('position'); ?>
+            <br> <?php echo $this->config->item('boss_name') . "<br>" . $this->config->item('boss_position'); ?>
         </div>
     </div>
     <div class="panel panel-default">
@@ -53,16 +53,16 @@
             รพ.สต.
         </div>
         <div class="panel-body ">
-            <!--<ul class="list-group list-group-flush" id="side-menu">
+            <ul class="list-group list-group-flush" id="side-menu">
 
                 <?php
-            /*                foreach ($office as $r) {
+                            foreach ($office as $r) {
                                 echo '<li class="list-group-item"><a href="http://gishealth.moph.go.th/healthmap/info.php?maincode=' . $r['id'] . '" target="_bank">' . str_replace('โรงพยาบาลส่งเสริมสุขภาพตำบล', 'รพ.สต.', $r['name']) . '</a></li>';
                             }
-                            */ ?>
+                             ?>
 
-            </ul>-->
-
+            </ul>
+<!--
             <ul class="list-group list-group-flush" id="side-menu">
 
                 <li class="list-group-item"><a href="http://gishealth.moph.go.th/healthmap/info.php?maincode=05013"
@@ -105,7 +105,7 @@
                                                target="_bank">รพ.สต.บ้านเมืองเสือ</a></li>
                 <li class="list-group-item"><a href="http://gishealth.moph.go.th/healthmap/info.php?maincode=13937"
                                                target="_bank">รพ.สต.บ้านเขวาทุ่ง</a></li>
-            </ul>
+            </ul>-->
         </div>
     </div>
 
