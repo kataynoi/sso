@@ -107,17 +107,17 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <div class="desc">..</div>
-                    <img src="<?php echo base_url()?>assets/images/banner/la.jpg" alt="Los Angeles" style="width:100%;">
+                    <img src="<?php echo base_url()?>assets/images/banner/1.jpg" alt="Los Angeles" style="width:100%;">
                 </div>
 
                 <div class="item">
                     <div class="desc">..</div>
-                    <img src="<?php echo base_url()?>assets/images/banner/chicago.jpg" alt="Chicago" style="width:100%;">
+                    <img src="<?php echo base_url()?>assets/images/banner/2.jpg" alt="Chicago" style="width:100%;">
                 </div>
 
                 <div class="item">
                     <div class="desc">..</div>
-                    <img src="<?php echo base_url()?>assets/images/banner/ny.jpg" alt="New york" style="width:100%;">
+                    <img src="<?php echo base_url()?>assets/images/banner/3.jpg" alt="New york" style="width:100%;">
                 </div>
             </div>
 
@@ -152,20 +152,20 @@ vvvv
                 การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ (Integrity & Transparency Assessment : ITA)
             </div>
             <div class="panel-body">
-                <table class=" table table-striped">
+                <table class=" table table-striped" id="tbl_ita">
                     <thead>
                     <th>#</th>
                     <th>EBIT</th>
                     <th>items</th>
                     </thead>
                     <tbody>
-                        <?php
-                        foreach($ita_ebit as $r){
+                       <!-- --><?php
+/*                        foreach($ita_ebit as $r){
                             echo "<tr><td>$r->id</td><td>$r->name</td>";
                             echo "<td><button class='btn' data-btn='btn_expand' data-id='$r->id'><i class='fa fa-arrow-circle-down'  ></i></button></td></tr>";
                             echo "<tr class='tr2' ><td></td><td>#</td><td colspan='2'>dddddd</td></tr>";
                         }
-                        ?>
+                        */?>
                     </tbody>
 
                 </table>
@@ -178,7 +178,13 @@ vvvv
                 ผลการดำเนินงาน
             </div>
             <div class="panel-body">
-
+                <ul class="list-group">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
             </div>
         </div>
     </div>

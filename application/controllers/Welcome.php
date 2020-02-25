@@ -22,11 +22,30 @@ class Welcome extends CI_Controller
         $boss = $this->crud->get_boss();
         $this->session->set_userdata($boss);
         $data['office'] = $this->crud->get_office();
-        $data['ita_ebit'] = $this->dash->get_ita_ebit();
+        //$data['ita_ebit'] = $this->dash->get_ita_ebit();
         $this->layout->view('dashboard/index_view', $data);
     }
     public function test(){
         $data[]='';
         $this->layout->view('test/index_view', $data);
+    }
+    public function get_ita(){
+        $year=$this->input->post('year');
+        $rs = $this->dash->get_ita_ebit($year);
+
+
+        $arr_result = array();
+        foreach($rs as $r)
+        {
+            $obj = new stdClass();
+            $obj->id        = $r->id;
+            $obj->name      = $r->name;
+            $obj->ita_index = $r->ita_index;
+            $obj->n_year    = $r->n_year;
+            $obj->ita_items    = $this->dash->get_ita_items($r->id);
+            $arr_result[] = $obj;
+        }
+        $json = $rs ? '{"success": "true", "rows": ' . json_encode($arr_result) . '}' : '{"success": false, "msg": "ไม่พบข้อมูล"}';
+        render_json($json);
     }
 }
