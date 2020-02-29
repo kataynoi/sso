@@ -25,7 +25,7 @@
     <link href="<?php echo base_url()?>assets/vendor/css/freeow.css" rel="stylesheet">
     <!--Set Color Page-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
     <!--
         https://www.w3schools.com/w3css/w3css_color_themes.asp
     -->

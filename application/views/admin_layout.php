@@ -9,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-<?PHP
-    $theme = 'https://www.w3schools.com/lib/w3-theme-blue.css'; ?>
+
     <title><?php echo version();?></title>
     <script src="<?php echo base_url()?>assets/vendor/js/jquery.min.js"></script>
     <script src="<?php echo base_url()?>assets/vendor/js/jquery.blockUI.js"></script>
@@ -24,7 +23,7 @@
     <link href="<?php echo base_url()?>assets/vendor/css/freeow.css" rel="stylesheet">
     <!--Set Color Page-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="<? echo $theme;?>">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
     <!--
         https://www.w3schools.com/w3css/w3css_color_themes.asp
     -->
