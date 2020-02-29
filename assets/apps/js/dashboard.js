@@ -37,7 +37,7 @@ $(function () {
                 for (i = 0; i < v.ita_items.length; ++i) {
                     file='',link='';
                     if(v.ita_items[i].file !=''){
-                        file='<a href="'+base_url+'/assets/upload/'+v.ita_items[i].file+'" target="_blank">' +
+                        file='<a href="'+base_url+'assets/uploads/'+v.ita_items[i].file+'" target="_blank">' +
                         ' <span class="btn pull-right"><i class="fa fa-save" style="color:green"></i></span> ' +
                         '</a>';
                     }

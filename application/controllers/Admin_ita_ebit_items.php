@@ -29,7 +29,7 @@ class Admin_ita_ebit_items extends CI_Controller
         $fetch_data = $this->crud->make_datatables();
         $data = array();
         foreach ($fetch_data as $row) {
-            if($row->file !=0){$file="<a href='".base_url('assets/upload/'.$row->file)."' target='_blank'><i class='fa fa-file'></i></a>";}else{$file='';};
+            if($row->file !=0){$file="<a href='".base_url('assets/uploads/'.$row->file)."' target='_blank'><i class='fa fa-file'></i></a>";}else{$file='';};
 
             $sub_array = array();
             $sub_array[] = $row->id;
@@ -70,37 +70,6 @@ class Admin_ita_ebit_items extends CI_Controller
     public function  save_Admin_ita_ebit_items()
     {
         $data = $this->input->post('items');
-        $fd = $this->input->post('fd');
-
-
-        /*Upload*/
-
-        $filename = $_FILES['file']['name'];
-
-        /* Location */
-        $location = "upload/" . $filename;
-        $uploadOk = 1;
-        $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
-
-        /* Valid Extensions */
-        $valid_extensions = array("jpg", "jpeg", "png");
-        /* Check file extension */
-        if (!in_array(strtolower($imageFileType), $valid_extensions)) {
-            $uploadOk = 0;
-        }
-
-        if ($uploadOk == 0) {
-            echo 0;
-        } else {
-            /* Upload file */
-            if (move_uploaded_file($_FILES['file']['tmp_name'], $location)) {
-                echo $location;
-            } else {
-                echo 0;
-            }
-        }
-        /*End Upload*/
-
 
         if ($data['action'] == 'insert') {
             $rs = $this->crud->save_Admin_ita_ebit_items($data);

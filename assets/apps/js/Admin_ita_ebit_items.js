@@ -77,8 +77,9 @@ crud.save = function (items, row_id) {
         if (err) {
             //app.alert(err);
             swal(err);
+            console.log(err);
             $('#frmModal').modal('toggle');
-            location.reload();
+            //location.reload();
 
         }
         else {
@@ -89,6 +90,7 @@ crud.save = function (items, row_id) {
             }*/
             $('#frmModal').modal('toggle');
             swal('บันทึกข้อมูลเรียบร้อยแล้ว ');
+            location.reload();
         }
     });
 
@@ -169,10 +171,14 @@ $('#frm_ita_ebit_item').submit(function (e) {
                 cache:false,
                 async:false,
                 success: function(data){
-                    items.file=data;
+                    if(data.success){
+                        items.file=data.file;
+                        crud.save(items, row_id);
+                    }
+
                 }
             });
-            crud.save(items, row_id);
+
         }else{
             crud.save(items, row_id);
         }
