@@ -10,14 +10,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class News_model extends CI_Model
 {
     var $table = "news";
-    var $order_column = Array('id','topic','detail','date_sent','user_id','cat_id','read','files',);
+    var $order_column = Array('id', 'topic', 'detail', 'date_sent', 'user_id', 'cat_id', 'read', 'files',);
 
     function make_query()
     {
         $this->db->from($this->table);
         if (isset($_POST["search"]["value"])) {
             $this->db->group_start();
-            $this->db->like("topic", $_POST["search"]["value"]);$this->db->or_like("detail", $_POST["search"]["value"]);
+            $this->db->like("topic", $_POST["search"]["value"]);
+            $this->db->or_like("detail", $_POST["search"]["value"]);
             $this->db->group_end();
 
         }
@@ -56,62 +57,87 @@ class News_model extends CI_Model
 
     /* End Datatable*/
     public function del_news($id)
-        {
+    {
         $rs = $this->db
             ->where('id', $id)
             ->delete('news');
         return $rs;
-        }
+    }
 
-        public function get_users(){
-                        $rs = $this->db
-                        ->get("users")
-                        ->result();
-                        return $rs;}    public function get_user_id_name($id)
-                {
-                    $rs = $this->db
-                        ->where("id",$id)
-                        ->get("users")
-                        ->row();
-                    return $rs?$rs->name:"";
-                }public function get_news_category(){
-                        $rs = $this->db
-                        ->get("news_category")
-                        ->result();
-                        return $rs;}    public function get_cat_id_name($id)
-                {
-                    $rs = $this->db
-                        ->where("id",$id)
-                        ->get("news_category")
-                        ->row();
-                    return $rs?$rs->name:"";
-                }
+    public function get_users()
+    {
+        $rs = $this->db
+            ->get("users")
+            ->result();
+        return $rs;
+    }
+
+    public function get_user_id_name($id)
+    {
+        $rs = $this->db
+            ->where("id", $id)
+            ->get("users")
+            ->row();
+        return $rs ? $rs->name : "";
+    }
+
+    public function get_news_category()
+    {
+        $rs = $this->db
+            ->get("news_category")
+            ->result();
+        return $rs;
+    }
+
+    public function get_cat_id_name($id)
+    {
+        $rs = $this->db
+            ->where("id", $id)
+            ->get("news_category")
+            ->row();
+        return $rs ? $rs->name : "";
+    }
 
     public function save_news($data)
-            {
+    {
 
-                $rs = $this->db
-                    ->set("id", $data["id"])->set("topic", $data["topic"])->set("detail", $data["detail"])->set("date_sent", $data["date_sent"])->set("user_id", $data["user_id"])->set("cat_id", $data["cat_id"])->set("read", $data["read"])->set("files", $data["files"])
-                    ->insert('news');
+        $rs = $this->db
+            ->set("id", $data["id"])
+            ->set("topic", $data["topic"])
+            ->set("detail", $data["detail"])
+            ->set("date_sent", date("Y-m-d"))
+            ->set("user_id", $data["user_id"])
+            ->set("cat_id", $data["cat_id"])
+            //->set("read", $data["read"])
+            ->set("file", $data["file"])
+            ->insert('news');
 
-                return $this->db->insert_id();
+        return $this->db->insert_id();
 
-            }
+    }
+
     public function update_news($data)
-            {
-                $rs = $this->db
-                    ->set("id", $data["id"])->set("topic", $data["topic"])->set("detail", $data["detail"])->set("date_sent", $data["date_sent"])->set("user_id", $data["user_id"])->set("cat_id", $data["cat_id"])->set("read", $data["read"])->set("files", $data["files"])->where("id",$data["id"])
-                    ->update('news');
+    {
+        $rs = $this->db
+            //->set("id", $data["id"])
+            ->set("topic", $data["topic"])
+            ->set("detail", $data["detail"])
+            ->set("user_id", $data["user_id"])
+            ->set("cat_id", $data["cat_id"])
+            ->set("file", $data["file"])
+            ->where("id", $data["id"])
+            ->update('news');
 
-                return $rs;
+        return $rs;
 
-            }
+    }
+
     public function get_news($id)
-                {
-                    $rs = $this->db
-                        ->where('id',$id)
-                        ->get("news")
-                        ->row();
-                    return $rs;
-                }
+    {
+        $rs = $this->db
+            ->where('id', $id)
+            ->get("news")
+            ->row();
+        return $rs;
+    }
 }

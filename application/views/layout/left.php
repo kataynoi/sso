@@ -48,6 +48,30 @@
         </div>
 
     </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading"> <i class="fa fa-neuter"></i> ข่าวประชาสัมพันธ์ </div>
+        <div class="panel-body">
+            <div class="sidebar-nav navbar-collapse" id="left_slide">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="<?php echo site_url('news') ?>"><i class="fas fa-chart-line"></i>
+                            ข่าวประชาสัมพันธ์ทั้งหมด </a>
+                    </li>
+
+                    <!--            <li>
+                <a href="<?php /*echo site_url('signin/')*/ ?>"><i class="far fa-calendar-check"></i> แจ้งซ่อม</a>
+            </li>-->
+                    <li>
+                        <a href="<?php echo site_url('admin') ?>"><i class="far fa-calendar-check">
+                                Administrator</i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
     <div class="panel panel-default">
         <div class="panel-heading">
             รพ.สต.

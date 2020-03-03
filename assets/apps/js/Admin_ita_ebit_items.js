@@ -143,7 +143,7 @@ crud.set_update = function (data, row_id) {
     $("#ita_ebit").val(data.rows["ita_ebit"]);
     $("#n_year").val(data.rows["n_year"]);
     $("#link").val(data.rows["link"]);
-    //$("#file2").val(data.rows["file"]);
+    $("#file2").val(data.rows["file"]);
 }
 
 $('#frm_ita_ebit_item').submit(function (e) {
@@ -180,6 +180,7 @@ $('#frm_ita_ebit_item').submit(function (e) {
             });
 
         }else{
+            items.file = $("#file2").val();
             crud.save(items, row_id);
         }
 

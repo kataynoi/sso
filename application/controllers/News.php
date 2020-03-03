@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class News extends CI_Controller
 {
     public $user_id;
+
     public function __construct()
     {
         parent::__construct();
@@ -15,7 +16,8 @@ class News extends CI_Controller
     public function index()
     {
         $data[] = '';
-        $data["users"] = $this->crud->get_users();$data["news_category"] = $this->crud->get_news_category();
+        $data["users"] = $this->crud->get_users();
+        $data["news_category"] = $this->crud->get_news_category();
         $this->layout->view('news/index', $data);
     }
 
@@ -25,12 +27,13 @@ class News extends CI_Controller
         $data = array();
         foreach ($fetch_data as $row) {
             $sub_array = array();
-                $sub_array[] = $row->id;$sub_array[] = $row->topic;$sub_array[] = $row->detail;$sub_array[] = $row->date_sent;$sub_array[] = $row->user_id;$sub_array[] = $row->cat_id;$sub_array[] = $row->read;$sub_array[] = $row->files;
-                $sub_array[] = '<div class="btn-group pull-right" role="group" >
-                <button class="btn btn-outline btn-success" data-btn="btn_view" data-id="' . $row->id . '"><i class="fa fa-eye"></i></button>
-                <button class="btn btn-outline btn-warning" data-btn="btn_edit" data-id="' . $row->id . '"><i class="fa fa-edit"></i></button>
-                <button class="btn btn-outline btn-danger" data-btn="btn_del" data-id="' . $row->id . '"><i class="fa fa-trash"></i></button></div>';
-                $data[] = $sub_array;
+            $sub_array[] = to_thai_date_short($row->date_sent);
+            //$sub_array[] = $row->id;
+            $sub_array[] = $row->topic;
+            $sub_array[] = $row->user_id;
+            $sub_array[] = $row->read;
+            //$sub_array[] = $row->file;
+            $data[] = $sub_array;
         }
         $output = array(
             "draw" => intval($_POST["draw"]),
@@ -41,13 +44,14 @@ class News extends CI_Controller
         echo json_encode($output);
     }
 
-    public function del_news(){
+    public function del_news()
+    {
         $id = $this->input->post('id');
 
-        $rs=$this->crud->del_news($id);
-        if($rs){
+        $rs = $this->crud->del_news($id);
+        if ($rs) {
             $json = '{"success": true}';
-        }else{
+        } else {
             $json = '{"success": false}';
         }
 
@@ -56,32 +60,32 @@ class News extends CI_Controller
 
     public function  save_news()
     {
-            $data = $this->input->post('items');
-            if($data['action']=='insert'){
-                $rs=$this->crud->save_news($data);
-                if($rs){
-                    $json = '{"success": true,"id":'.$rs.'}';
-                  }else{
-                    $json = '{"success": false}';
-                  }
-            }else if($data['action']=='update'){
-                $rs=$this->crud->update_news($data);
-                    if($rs){
-                        $json = '{"success": true}';
-                    }else{
-                        $json = '{"success": false}';
-                    }
+        $data = $this->input->post('items');
+        if ($data['action'] == 'insert') {
+            $rs = $this->crud->save_news($data);
+            if ($rs) {
+                $json = '{"success": true,"id":' . $rs . '}';
+            } else {
+                $json = '{"success": false}';
             }
-
-            render_json($json);
+        } else if ($data['action'] == 'update') {
+            $rs = $this->crud->update_news($data);
+            if ($rs) {
+                $json = '{"success": true}';
+            } else {
+                $json = '{"success": false}';
+            }
         }
+
+        render_json($json);
+    }
 
     public function  get_news()
     {
-                $id = $this->input->post('id');
-                $rs = $this->crud->get_news($id);
-                $rows = json_encode($rs);
-                $json = '{"success": true, "rows": ' . $rows . '}';
-                render_json($json);
+        $id = $this->input->post('id');
+        $rs = $this->crud->get_news($id);
+        $rows = json_encode($rs);
+        $json = '{"success": true, "rows": ' . $rows . '}';
+        render_json($json);
     }
 }

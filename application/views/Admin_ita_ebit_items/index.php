@@ -50,7 +50,7 @@
             </div>
 
             <!-- Modal body -->
-            <form id="frm_ita_ebit_item" >
+            <form id="frm_ita_ebit_item" method="post" enctype="multipart/form-data">
             <div class="modal-body">
                 <input type="hidden" id="action" value="insert">
                 <input type="hidden" class="form-control" id="row_id" placeholder="ROWID" value="">
@@ -86,6 +86,7 @@
                     <input type="text" class="form-control" id="link" placeholder="Link" value=""></div>
                 <div class="form-group">
                     <label for="file">ไฟล์</label>
+                    <input type="hidden" class="form-control" id="file2" value="">
                     <input type="file" class="form-control" id="file" name="file" placeholder="ไฟล์" value=""></div>
             </div>
 
