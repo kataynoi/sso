@@ -36,7 +36,7 @@ $(function () {
                 var no2 = 1, link = '', file = '',items_no='';
 
                 if(v.ita_items.length>0){
-                    items_no ='<span class="pull-right bg-primary btn btn-sm btn-outline btn-success">'+v.ita_items.length+'</span>';
+                    items_no ='<span class="pull-right bg-primary btn btn-sm btn-outline btn-success" data-btn="btn_expand">'+v.ita_items.length+'</span>';
                 }
 
                 for (i = 0; i < v.ita_items.length; ++i) {
@@ -60,8 +60,8 @@ $(function () {
                 $('#tbl_ita > tbody').append(
                     '<tr>' +
                     '<td>' + no + '</td>' +
-                    '<td>' + v.name +items_no+'</td>' +
-                    '<td><i  data-btn="btn_expand" class="btn btn-outline fa fa-angle-double-down" style="color:blue" ></i></td>' +
+                    '<td>' + v.name +'</td>' +
+                    '<td>'+items_no+'</td>' +
                     '</tr>' +
                     '<tr class="tr2" hidden ><td colspan="3">' + items + '</td></tr>'
                 );
@@ -72,7 +72,7 @@ $(function () {
         }
     }
 
-    $(document).on('click', 'i[data-btn="btn_expand"]', function (e) {
+    $(document).on('click', 'span[data-btn="btn_expand"]', function (e) {
         e.preventDefault();
         var id = $(this).data('id');
         var row_id = $("#row_id").val();
