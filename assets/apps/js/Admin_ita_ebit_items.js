@@ -178,17 +178,11 @@ $('#frm_ita_ebit_item').submit(function (e) {
 
                 }
             });
-
         }else{
             items.file = $("#file2").val();
             crud.save(items, row_id);
         }
-
     }
-
-
-
-
 });
 
 $('#add_data').on('click', function (e) {
