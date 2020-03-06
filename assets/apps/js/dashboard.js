@@ -74,10 +74,15 @@ $(function () {
 
     $(document).on('click', 'span[data-btn="btn_expand"]', function (e) {
         e.preventDefault();
-        var id = $(this).data('id');
-        var row_id = $("#row_id").val();
-        $('.tr2').hide();
-        $(this).parents('tr').next('tr').show();
+        var next_tr = $(this).parents('tr').next('tr');
+        if(next_tr.is(":hidden")){
+            $('.tr2').hide();
+            next_tr.show();
+        }else{
+            next_tr.hide();
+        }
+
+
 
     });
 
