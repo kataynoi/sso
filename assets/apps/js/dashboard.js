@@ -36,7 +36,7 @@ $(function () {
                 var no2 = 1, link = '', file = '',items_no='';
 
                 if(v.ita_items.length>0){
-                    items_no ='<span class="pull-right bg-primary btn btn-sm btn-outline btn-success" data-btn="btn_expand">'+v.ita_items.length+'</span>';
+                    items_no ='<span class="pull-right bg-primary btn btn-sm btn-outline btn-info" data-btn="btn_expand">'+v.ita_items.length+'</span>';
                 }
 
                 for (i = 0; i < v.ita_items.length; ++i) {
