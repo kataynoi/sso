@@ -60,7 +60,7 @@ $(function () {
                 $('#tbl_ita > tbody').append(
                     '<tr>' +
                     '<td>' + no + '</td>' +
-                    '<td>' + v.name +'</td>' +
+                    '<td class="topic">' + v.name +'</td>' +
                     '<td>'+items_no+'</td>' +
                     '</tr>' +
                     '<tr class="tr2" hidden ><td colspan="3">' + items + '</td></tr>'
@@ -81,9 +81,6 @@ $(function () {
         }else{
             next_tr.hide();
         }
-
-
-
     });
 
     report.get_ita(year);

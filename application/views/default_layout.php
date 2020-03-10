@@ -16,6 +16,7 @@
     <script src="<?php echo base_url()?>assets/vendor/js/jquery.blockUI.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url()?>assets/vendor/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/vendor/css/style.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
     <link href="<?php echo base_url()?>assets/vendor/css/metisMenu.min.css" rel="stylesheet">
     <!--<link href="<?php /*echo base_url()*/?>assets/vendor/css/left.css" rel="stylesheet"-->
@@ -85,18 +86,18 @@
 <div id="wrapper">
 
     <!-- Navigation -->
-    <nav class="navbar w3-theme" role="" style="margin-bottom: 0">
+    <nav class="navbar w3-theme" role="" style="margin-bottom: 0;">
         <div >
             <?php echo $header_for_layout?>
         </div>
         <!-- /.navbar-static-side -->
-        <div id="left_menu" style="padding-left: 2%">
+        <div id="left_menu" style="padding-left: 2%; ">
             <?php echo $left_for_layout?>
         </div>
         <!-- /.navbar-static-side -->
     </nav>
     <div>
-        <div id="page-wrapper" style="padding-left: 3%">
+        <div id="page-wrapper" style="padding-left: 3% ;">
            <!-- <button id="hide_left" data-show="true">Hide</button>-->
             <?php echo $content_for_layout?>
         </div>

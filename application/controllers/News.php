@@ -25,14 +25,25 @@ class News extends CI_Controller
     {
         $fetch_data = $this->crud->make_datatables();
         $data = array();
+        $txt_view = '';
         foreach ($fetch_data as $row) {
             $sub_array = array();
-            $sub_array[] = to_thai_date_short($row->date_sent);
-            //$sub_array[] = $row->id;
-            $sub_array[] = $row->topic;
-            $sub_array[] = $row->user_id;
-            $sub_array[] = $row->read;
-            //$sub_array[] = $row->file;
+            $txt_view='    <div class="row" style="">
+                                <div class="col-xs-12 col-md-1 text-center" style="color: white;background-image: url(../assets/img/topic_bg.png); background-repeat: no-repeat;background-position: center;position: relative;height: 100px;">
+                                <span class="highlight">'
+                                . substr(to_thai_date_short($row->date_sent),0,-5) . '</span></div>
+                                <div class="col-xs-6 col-md-10 pull-right topic" style="height:80px;">
+                                <a href="">
+                                            '. $row->topic .'
+                                            </a>
+                                            </div>
+                                <div class="col-xs-6 col-md-10 pull-right" style="">
+                                    <i class="fa fa-eye" aria-hidden="true"> &nbsp;</i><span >'. $row->read . ' view</span>&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-calendar" aria-hidden="true"> </i><span > ' . to_thai_date_short($row->date_sent) . '</span>
+                                    <span class="pull-right w3-text-color" ><i class="fa fa-user" aria-hidden="true"> </i> ' . get_user_name($row->user_id) . '</span>
+                                </div>
+                            </div>';
+            $sub_array[] = $txt_view;
             $data[] = $sub_array;
         }
         $output = array(

@@ -62,9 +62,9 @@ class Basic_model extends CI_Model
 
         $rs = $this->db
             ->where('id',$id)
-            ->get('mas_users')
+            ->get('users')
             ->row();
-        return $rs?$rs->prename.$rs->name:'-';
+        return $rs?$rs->name:'-';
     }
 
 }

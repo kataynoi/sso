@@ -5,7 +5,14 @@
 <html>
 <body>
 <br>
-
+<script>
+    $('#left_menu').hide();
+</script>
+<style>
+    #page-wrapper {
+        margin-left: 0px;
+    }
+</style>
 <div class="row">
     <div class="panel panel-info ">
         <div class="panel-heading w3-theme">
@@ -18,13 +25,10 @@
         </div>
         <div class="panel-body">
 
-            <table id="table_data" class="table table-responsive">
+            <table id="table_data" class="table table-borderless">
                 <thead>
                 <tr>
-                    <th>วันที่</th>
-                    <th>หัวข้อ</th>
-                    <th>ผู้ส่ง</th>
-                    <th>จำนวนการอ่าน</th>
+                    <th><hr class="hr_news1"></th>
                 </tr>
                 </thead>
 

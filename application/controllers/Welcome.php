@@ -18,7 +18,8 @@ class Welcome extends CI_Controller
        // $data['all_pc'] = $this->db->from('com_survey')->where('computertype',2)->count_all_results();
         //$data['all_nb'] = $this->db->from('com_survey')->where('computertype',3)->count_all_results();
         $data['all_employee'] = $this->db->from('employee')->where('active',1)->count_all_results();
-        //$data['all_printer'] = $this->db->from('printer_survey')->count_all_results();
+        $data['news1'] = $rs = $this->dash->get_news(1);
+        $data['news2'] = $rs = $this->dash->get_news(2);
         $boss = $this->crud->get_boss();
         $this->session->set_userdata($boss);
         $data['office'] = $this->crud->get_office();
