@@ -25,10 +25,10 @@ class Basic_model extends CI_Model
         return $rs;
     }
 
-    public function sl_hospcode($id='44'){
+    public function sl_hospcode(){
 
         $rs = $this->db
-            ->where('provcode',$id)
+            //->where('provcode',$id)
             ->get('chospital')
             ->result();
         return $rs;
@@ -46,7 +46,7 @@ class Basic_model extends CI_Model
 
         $rs = $this->db
             //->where('provcode',$id)
-            ->get('employee_type')
+            ->get('cemployee_type')
             ->result();
         return $rs;
     }

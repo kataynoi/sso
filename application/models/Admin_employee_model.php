@@ -9,15 +9,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Admin_employee_model extends CI_Model
 {
-    var $table = "employee";
-    var $order_column = Array('id', 'prename', 'name', 'sex', 'cid', 'position', 'employee_type', 'hospcode', 'tel', 'line', 'facebook', 'active',);
+    var $table = "employee as a";
+    var $order_column = Array('prename', 'name', 'position', 'employee_type', 'hospcode');
 
     function make_query()
     {
-        $this->db->from($this->table);
+        $this->db->select('a.id,a.prename,a.name,a.position, a.name as employee_type, c.name as hospcode')
+            ->join('cemployee_type as b','a.employee_type = b.id')
+            ->join('chospital as c','a.hospcode = c.id')
+            ->from($this->table);
         if (isset($_POST["search"]["value"])) {
             $this->db->group_start();
-            $this->db->like("name", $_POST["search"]["value"]);
+            $this->db->like("a.name", $_POST["search"]["value"]);
+            $this->db->or_like("b.name", $_POST["search"]["value"]);
+            $this->db->or_like("a.position", $_POST["search"]["value"]);
+            $this->db->or_like("c.name", $_POST["search"]["value"]);
             $this->db->group_end();
 
         }

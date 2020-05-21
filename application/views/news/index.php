@@ -17,9 +17,14 @@
     <div class="panel panel-info ">
         <div class="panel-heading w3-theme">
             <i class="fa fa-user fa-2x "></i> ข่าว/ประกาศ
-            <button class="btn btn-success pull-right" id="add_data" data-toggle="modal" data-target="#frmModal"><i
+            <?php
+            if(check_role(1,$this->session->userdata('id'))){
+                echo '<button class="btn btn-success pull-right" id="add_data" data-toggle="modal" data-target="#frmModal"><i
                     class="fa fa-plus-circle"></i> Add
-            </button>
+            </button>';
+            }
+            ?>
+
             </span>
 
         </div>
@@ -59,7 +64,7 @@
 
                 <div class="form-group">
 
-                    <input type="text" class="form-control" id="id" placeholder="ID" value=""></div>
+                    <input type="hidden" class="form-control" id="id" placeholder="ID" value=""></div>
                 <div class="form-group">
                     <label for="topic">หัวข้อ</label>
                     <input type="text" class="form-control" id="topic" placeholder="หัวข้อ" value=""></div>
@@ -67,15 +72,6 @@
                     <label for="detail">รายละเอียด</label>
                     <textarea rows="5" class="form-control" id="detail" placeholder="รายละเอียด" value=""></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="user_id">ผู้ส่ง</label>
-                    <select class="form-control" id="user_id" placeholder="ผู้ส่ง" value="">
-                        <option>-------</option>
-                        <?php
-                        foreach ($users as $r) {
-                            echo "<option value=$r->id > $r->name </option>";
-                        } ?>
-                    </select></div>
                 <div class="form-group">
                     <label for="cat_id">หมวดหมู่</label>
                     <select class="form-control" id="cat_id" placeholder="หมวดหมู่" value="">

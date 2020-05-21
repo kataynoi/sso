@@ -36,7 +36,7 @@ class User_model extends CI_Model
     public function get_userprofile($id){
         $rs = $this->db
             ->where('id',$id)
-            ->get('mas_users')
+            ->get('employee')
             ->row_array();
         return $rs;
     }

@@ -153,7 +153,7 @@
                                 <span class="highlight2">'
                                     . substr(to_thai_date_short($row->date_sent),0,-5) . '</span></div>
                                 <div class="col-md-10 pull-right topic " style="height:60px;">
-                                <a href="">
+                                <a href="'.site_url('news/news_detail/').$row->id.'">
                                             '. $row->topic .'
                                             </a>
                                             </div>

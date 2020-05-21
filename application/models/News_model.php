@@ -106,7 +106,7 @@ class News_model extends CI_Model
             ->set("topic", $data["topic"])
             ->set("detail", $data["detail"])
             ->set("date_sent", date("Y-m-d"))
-            ->set("user_id", $data["user_id"])
+            ->set("user_id", $this->session->userdata('id'))
             ->set("cat_id", $data["cat_id"])
             //->set("read", $data["read"])
             ->set("file", $data["file"])
@@ -122,7 +122,7 @@ class News_model extends CI_Model
             //->set("id", $data["id"])
             ->set("topic", $data["topic"])
             ->set("detail", $data["detail"])
-            ->set("user_id", $data["user_id"])
+            ->set("user_id", $this->session->userdata('id'))
             ->set("cat_id", $data["cat_id"])
             ->set("file", $data["file"])
             ->where("id", $data["id"])
@@ -133,6 +133,15 @@ class News_model extends CI_Model
     }
 
     public function get_news($id)
+    {
+        $rs = $this->db
+            ->where('id', $id)
+            ->get("news")
+            ->row();
+        return $rs;
+    }
+
+    public function get_news_detail($id)
     {
         $rs = $this->db
             ->where('id', $id)

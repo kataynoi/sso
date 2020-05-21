@@ -20,26 +20,39 @@ class News extends CI_Controller
         $data["news_category"] = $this->crud->get_news_category();
         $this->layout->view('news/index', $data);
     }
+    public function news_detail($id)
+    {
+
+        $data["news"] = $this->crud->get_news_detail($id);
+        $this->layout->view('news/news_detail', $data);
+    }
 
     function fetch_news()
     {
         $fetch_data = $this->crud->make_datatables();
         $data = array();
         $txt_view = '';
+
         foreach ($fetch_data as $row) {
+            $del_news = '';
+            if (check_role(1, $this->session->userdata('id'))) {
+                $del_news = '<button class="btn btn-warning btn-outline pull-right" data-btn="btn_edit" data-id="' . $row->id . '" ><i class="fa fa-edit " aria-hidden="true"> </i></button>
+                      <button class="btn btn-danger btn-outline pull-right" data-btn="btn_del" data-id="' . $row->id . '" ><i class="fa fa-trash-alt " aria-hidden="true"> </i></button>';
+            }
             $sub_array = array();
-            $txt_view='    <div class="row" style="">
+            $txt_view = '    <div class="row" style="">
                                 <div class="col-xs-12 col-md-1 text-center" style="color: white;background-image: url(../assets/img/topic_bg.png); background-repeat: no-repeat;background-position: center;position: relative;height: 100px;">
                                 <span class="highlight">'
-                                . substr(to_thai_date_short($row->date_sent),0,-5) . '</span></div>
+                . substr(to_thai_date_short($row->date_sent), 0, -5) . '</span></div>
                                 <div class="col-xs-6 col-md-10 pull-right topic" style="height:80px;">
-                                <a href="">
-                                            '. $row->topic .'
+                     <a href="'.site_url('news/news_detail/').$row->id.'">
+                                            ' . $row->topic . '
                                             </a>
                                             </div>
                                 <div class="col-xs-6 col-md-10 pull-right" style="">
-                                    <i class="fa fa-eye" aria-hidden="true"> &nbsp;</i><span >'. $row->read . ' view</span>&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-eye" aria-hidden="true"> &nbsp;</i><span >' . $row->read . ' view</span>&nbsp;&nbsp;&nbsp;
                                     <i class="fa fa-calendar" aria-hidden="true"> </i><span > ' . to_thai_date_short($row->date_sent) . '</span>
+                                    ' . $del_news . '
                                     <span class="pull-right w3-text-color" ><i class="fa fa-user" aria-hidden="true"> </i> ' . get_user_name($row->user_id) . '</span>
                                 </div>
                             </div>';

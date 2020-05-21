@@ -13,7 +13,7 @@ var app = {
                 opacity: 1,
                 color: '#fff'
             },
-            message: '<h4>Loading <img src="' + base_url + 'assets/apps/img/ajax-loader-fb.gif" alt="loading."> </h4>'
+            message: '<h4>Loading </h4>'
         });
     },
 
@@ -31,7 +31,7 @@ var app = {
                 opacity: 1,
                 color: '#fff'
             },
-            message: '<h4><img src="' + base_url + 'assets/apps/img/ajax-loader-fb.gif" alt="loading."> Loading...</h4>'
+            message: '<h4> Loading...</h4>'
         });
     },
     hide_block: function (obj) {

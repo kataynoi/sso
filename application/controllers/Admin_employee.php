@@ -30,22 +30,17 @@ class Admin_employee extends CI_Controller
     {
         $fetch_data = $this->crud->make_datatables();
         $data = array();
+        $no = 0;
         foreach ($fetch_data as $row) {
 
-
+            $no++;
             $sub_array = array();
-            $sub_array[] = $row->id;
+            $sub_array[] = $no;
             $sub_array[] = $row->prename;
             $sub_array[] = $row->name;
-            $sub_array[] = $row->sex;
-            $sub_array[] = $row->cid;
             $sub_array[] = $row->position;
             $sub_array[] = $row->employee_type;
             $sub_array[] = $row->hospcode;
-            $sub_array[] = $row->tel;
-            $sub_array[] = $row->line;
-            $sub_array[] = '<a href="'.$row->facebook.'" target="_blank">Link</a>';
-            $sub_array[] = $row->active;
             $sub_array[] = '<div class="btn-group pull-right" role="group" >
                 <button class="btn btn-outline btn-success" data-btn="btn_view" data-id="' . $row->id . '"><i class="fa fa-eye"></i></button>
                 <button class="btn btn-outline btn-warning" data-btn="btn_edit" data-id="' . $row->id . '"><i class="fa fa-edit"></i></button>

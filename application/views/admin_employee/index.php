@@ -21,18 +21,13 @@
             <table id="table_data" class="table table-responsive">
                 <thead>
                 <tr>
-                    <th>ID</th>
+
+                    <th>#</th>
                     <th>คำนำหน้า</th>
                     <th>ชื่อสกุล</th>
-                    <th>เพศ</th>
-                    <th>เลขประจำตัวประชาชน</th>
                     <th>ตำแหน่ง</th>
                     <th>ประเภทพนักงาน</th>
-                    <th>กลุ่มงาน</th>
-                    <th>เบอร์โทร</th>
-                    <th>LineID</th>
-                    <th>Facebook</th>
-                    <th>สถานะการใช้งาน</th>
+                    <th>หน่วยงาน</th>
                     <th>#</th>
                 </tr>
                 </thead>
@@ -68,7 +63,11 @@
                     <input type="text" class="form-control" id="name" placeholder="ชื่อสกุล" value=""></div>
                 <div class="form-group">
                     <label for="sex">เพศ</label>
-                    <input type="text" class="form-control" id="sex" placeholder="เพศ" value=""></div>
+                    <select class="form-control" id="sex" name="sex" placeholder="เพศ" value="">
+                        <option value="1"> ชาย </option>
+                        <option value="2"> หญิง </option>
+                    </select>
+
                 <div class="form-group">
                     <label for="cid">เลขประจำตัวประชาชน</label>
                     <input type="text" class="form-control" id="cid" placeholder="เลขประจำตัวประชาชน" value=""></div>

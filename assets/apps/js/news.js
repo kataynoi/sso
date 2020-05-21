@@ -153,30 +153,33 @@ $('#frm_news').submit(function (e) {
     items.id = $("#id").val();
     items.topic = $("#topic").val();
     items.detail = $("#detail").val();
-    items.user_id = $("#user_id").val();
+    //items.user_id = $("#user_id").val();
     items.cat_id = $("#cat_id").val();
     items.file = $("#file").val();
+    if (validate(items)) {
 
-    if(items.file ){
-        $.ajax({
-            url:'upload/do_upload_file/',
-            type:"post",
-            data:new FormData(this),
-            processData:false,
-            contentType:false,
-            cache:false,
-            async:false,
-            success: function(data){
-                if(data.success){
-                    items.file=data.file;
-                    crud.save(items, row_id);
+
+        if (items.file) {
+            $.ajax({
+                url: 'upload/do_upload_file/',
+                type: "post",
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                cache: false,
+                async: false,
+                success: function (data) {
+                    if (data.success) {
+                        items.file = data.file;
+                        crud.save(items, row_id);
+                    }
                 }
-            }
-        });
+            });
 
-    }else{
-        items.file = $("#file2").val();
-        crud.save(items, row_id);
+        } else {
+            items.file = $("#file2").val();
+            crud.save(items, row_id);
+        }
     }
 });
 
@@ -245,30 +248,15 @@ $(document).on('click', 'button[data-btn="btn_view"]', function (e) {
 
 function validate(items) {
 
-    if (!items.id) {
-        swal("กรุณาระบุID");
-        $("#id").focus();
-    } else if (!items.topic) {
+    if (!items.topic) {
         swal("กรุณาระบุหัวข้อ");
         $("#topic").focus();
     } else if (!items.detail) {
         swal("กรุณาระบุรายละเอียด");
         $("#detail").focus();
-    } else if (!items.date_sent) {
-        swal("กรุณาระบุวันที่ส่ง");
-        $("#date_sent").focus();
-    } else if (!items.user_id) {
-        swal("กรุณาระบุผู้ส่ง");
-        $("#user_id").focus();
     } else if (!items.cat_id) {
         swal("กรุณาระบุหมวดหมู่");
         $("#cat_id").focus();
-    } else if (!items.read) {
-        swal("กรุณาระบุจำนวนการอ่าน");
-        $("#read").focus();
-    } else if (!items.files) {
-        swal("กรุณาระบุไฟลล์");
-        $("#files").focus();
     }
     else {
         return true;
