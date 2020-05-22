@@ -143,10 +143,18 @@ class News_model extends CI_Model
 
     public function get_news_detail($id)
     {
+        $this->add_view_news($id);
         $rs = $this->db
             ->where('id', $id)
             ->get("news")
             ->row();
+        return $rs;
+    }
+    public function add_view_news($id){
+        $rs=$this->db
+            ->set('`read`','`read`+1',false)
+            ->where('id',$id)
+            ->update('news');
         return $rs;
     }
 }
