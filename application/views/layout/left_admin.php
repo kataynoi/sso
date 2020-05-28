@@ -34,6 +34,31 @@
             </li>
 
             <li>
+                <a href="<?php echo site_url('outsite') ?>"><i class="fa fa-bus fa-fw"></i> ข้อมูบลพื้นฐาน<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="<?php echo site_url('admin_boss') ?>"><i
+                                class="fa fa-angle-double-right  "></i> ผู้บริหาร</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin_policy') ?>"><i
+                                class="fa fa-angle-double-right  "></i> นโยบายผู้บริหาร</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin_structure') ?>"><i
+                                class="fa fa-angle-double-right  "></i> โครงสร้างหน่วยงาน</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('admin_authority') ?>"><i
+                                class="fa fa-angle-double-right  "></i> อำนาจหน้าที่</a>
+                    </li>
+
+                </ul>
+                <!-- /.nav-second-level -->
+
+            </li>
+            <li>
                 <a href="<?php echo site_url('outsite') ?>"><i class="fa fa-bus fa-fw"></i> ข่าวประชาสัมพพันธ์ News<span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">

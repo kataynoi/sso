@@ -48,11 +48,11 @@
         font-family: 'Kanit', sans-serif;
         font-size: 100%;
     }
+    img.center {
+        display: block;
+        margin: 0 auto;
+    }
 </style>
-<!-- Custom Fonts -->
-
-<!-- jQuery -->
-
 
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php echo base_url()?>assets/vendor/js/bootstrap.min.js"></script>

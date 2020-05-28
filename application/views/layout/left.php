@@ -15,19 +15,18 @@
                         <a href="<?php echo site_url(); ?>"><i class="fas fa-chart-line"></i> Home</a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url('outsite') ?>"><i class="fa fa-bus fa-fw"></i>
-                            ผู้บริหารหน่วยงาน<span
-                                class="fa arrow"></span></a></li>
+                        <a href="<?php echo site_url('base_data/boss') ?>"><i class="fa fa-bus fa-fw"></i>
+                            ผู้บริหารหน่วยงาน</a></li>
 
                     <li>
-                        <a href="<?php echo site_url('com_survey') ?>"><i class="fas fa-chart-line"></i> นโยบายผู้บริหาร</a>
+                        <a href="<?php echo site_url('base_data/policy') ?>"><i class="fas fa-chart-line"></i> นโยบายผู้บริหาร</a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url('printer_survey') ?>"><i class="fas fa-chart-line"></i>
+                        <a href="<?php echo site_url('base_data/structure') ?>"><i class="fas fa-chart-line"></i>
                             โครงส้รางหน่วยงาน </a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url('switch_survey') ?>"><i class="fas fa-chart-line"></i> อำนาจหน้าที่
+                        <a href="<?php echo site_url('base_data/authority') ?>"><i class="fas fa-chart-line"></i> อำนาจหน้าที่
                             สาธารณสุขอำเภอ</a>
                     </li>
 
