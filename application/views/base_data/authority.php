@@ -6,7 +6,7 @@
         <?php
         echo $authority->name;
         if($authority->file !=''){
-            echo "<span class='center'><img src='".base_url('assets/uploads/').$authority->file."'></span>";
+            echo "<span class='center'><img src='".base_url('assets/uploads/').$authority->file."' width='100%></span>";
         }
         ?>
     </div>
