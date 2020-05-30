@@ -6,7 +6,7 @@
         <?php
         echo $boss_list->name;
         if($boss_list->file !=''){
-            echo "<span class='center'><img src='".base_url('assets/uploads/').$boss_list->file."' width='100%></span>";
+            echo "<span class='center'><img src='".base_url('assets/uploads/').$boss_list->file."' width='100%'></span>";
         }
         ?>
     </div>

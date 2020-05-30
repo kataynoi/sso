@@ -6,7 +6,7 @@
         <?php
         echo $structure->name;
         if($structure->file !=''){
-            echo "<span class='center'><img src='".base_url('assets/uploads/').$structure->file."' width='100%></span>";
+            echo "<span class='center'><img src='".base_url('assets/uploads/').$structure->file."' width='100%'></span>";
         }
         ?>
     </div>
