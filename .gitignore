@@ -22,6 +22,7 @@ assets/images/users/*
 assets/images/
 assets/uploads/*
 
+info.php
 /crud
 /report
 contributing.md
