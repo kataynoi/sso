@@ -67,7 +67,7 @@
                                 class="fa fa-angle-double-right  "></i> หมวดหมู่ ข่าว</a>
                     </li>
                     <li>
-                        <a href="<?php echo site_url('') ?>"><i
+                        <a href="<?php echo site_url('news') ?>"><i
                                 class="fa fa-angle-double-right  "></i> เพิ่มข่าว</a>
                     </li>
 

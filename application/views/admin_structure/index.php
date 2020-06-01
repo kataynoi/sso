@@ -29,9 +29,7 @@
     <div class="panel panel-info ">
         <div class="panel-heading w3-theme">
             <i class="fa fa-user fa-2x "></i> โครงสร้างหน่วยงาน
-            <button class="btn btn-success pull-right" id="add_data" data-toggle="modal" data-target="#frmModal"><i
-                    class="fa fa-plus-circle"></i> Add
-            </button>
+
             </span>
 
         </div>
