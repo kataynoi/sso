@@ -1,11 +1,8 @@
 <?php
 $link = $this->db->get('link')->result();
 ?>
-<div class="row" style="height: 100px">.</div>
-<div class="fixed-bottom" style="position: fixed;
-    bottom: 0;
-    width: 100%;
-    border:0px solid black;
+
+<div class="fixed-bottom" style="
     background: #f8f8f8;
     padding-left: 320px;
     padding-right: 10%;
