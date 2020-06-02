@@ -21,7 +21,7 @@ class Welcome extends CI_Controller
         $data['news3'] = $rs = $this->dash->get_news(3);
         $boss = $this->crud->get_boss();
         $this->session->set_userdata($boss);
-        $data['office'] = $this->crud->get_office();
+        //$data['office'] = $this->crud->get_office();
         //$data['ita_ebit'] = $this->dash->get_ita_ebit();
         $this->layout->view('dashboard/index_view', $data);
     }

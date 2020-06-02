@@ -97,7 +97,7 @@
         <!-- /.navbar-static-side -->
     </nav>
     <div>
-        <div id="page-wrapper" style="padding-left: 3% ;">
+        <div id="page-wrapper" style="padding-left: 3% ; padding-bottom: 200px">
            <!-- <button id="hide_left" data-show="true">Hide</button>-->
             <?php echo $content_for_layout?>
         </div>

@@ -79,9 +79,13 @@
                 <!-- /.nav-second-level -->
 
             </li>
+
             <li>
-                <a href="<?php echo site_url('outsite') ?>"><i class="fa fa-bus fa-fw"></i> ITA<span
-                        class="fa arrow"></span></a>
+                <a href="<?php echo site_url('admin_link') ?>"><i class="fa fa-bus fa-fw"></i> จัดการ Link </a>
+            </li>
+            <li>
+                <a href="<?php echo site_url('outsite') ?>"><i class="fa fa-bus fa-fw"></i> ITA><span
+                        class="fa arrow"></span</a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="<?php echo site_url('admin_ita_index') ?>"><i

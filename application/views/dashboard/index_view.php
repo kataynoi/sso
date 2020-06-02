@@ -1,98 +1,4 @@
 
-<!--<div class="col col-lg-12" style="padding-top: 20px;margin: 2px">
-    <div class="col-lg-3 ">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-user-md fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge" id="percent_audit"><?php /*echo $all_employee */?></div>
-                        <div>บุคลากร</div>
-                    </div>
-                </div>
-            </div>
-            <a href="<?php /**/?>">
-                <div class="panel-footer">
-                    <span class="pull-left">รายละเอียด</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-green">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-desktop fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge" id="percent_audit_true"><?php /*echo $all_pc */?></div>
-                        <div>จำนวน PC</div>
-                    </div>
-                </div>
-            </div>
-            <a href="<?php /*echo site_url('com_survey'); */?>">
-                <div class="panel-footer">
-                    <span class="pull-left">รายละเอียด</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-yellow">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-laptop fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge"><?php /*echo $all_nb */?></div>
-                        <div>NoteBook</div>
-                    </div>
-                </div>
-            </div>
-            <a href="#">
-                <div class="panel-footer">
-                    <span class="pull-left">รายละเอียดเพิ่มเติม</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-6">
-        <div class="panel panel-red">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-print fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                        <div class="huge"><?php /*echo $all_printer */?></div>
-                        <div>Printer</div>
-                    </div>
-                </div>
-            </div>
-            <a href="<?php /*echo site_url('printer_survey');*/?>">
-                <div class="panel-footer">
-                    <span class="pull-left">รายละเอียดเพิ่มเติม</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>-->
 <div class="row">
     <div class="col-lg-12">
         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 15px">
@@ -107,17 +13,17 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <div class="desc">..</div>
-                    <img src="<?php echo base_url()?>assets/images/banner/1.jpg" alt="Los Angeles" style="width:100%;">
+                    <img src="<?php echo base_url()?>assets/images/banner/1.jpg" alt="" style="width:100%;">
                 </div>
 
                 <div class="item">
                     <div class="desc">..</div>
-                    <img src="<?php echo base_url()?>assets/images/banner/2.jpg" alt="Chicago" style="width:100%;">
+                    <img src="<?php echo base_url()?>assets/images/banner/2.jpg" alt="" style="width:100%;">
                 </div>
 
                 <div class="item">
                     <div class="desc">..</div>
-                    <img src="<?php echo base_url()?>assets/images/banner/3.jpg" alt="New york" style="width:100%;">
+                    <img src="<?php echo base_url()?>assets/images/banner/3.jpg" alt="" style="width:100%;">
                 </div>
             </div>
 
@@ -136,6 +42,15 @@
 </div>
 <br>
 <div class='row'>
+    <div class="col col-lg-6">
+        <div class="panel panel-info">
+            <div class="panel-heading"> รายงานสถานการณ์ โควิด-19 ในประเทศ</div>
+            <div class="panel-body">
+                <iframe width="100%" height="400px" src="https://covid19.th-stat.com/th/share/dashboard" frameBorder="0"></iframe>
+            </div>
+        </div>
+
+    </div>
     <div class='col col-lg-12'>
         <div class="panel  panel-default">
             <div class="panel-heading w3-theme-l1">
@@ -265,13 +180,13 @@
                 ผลการดำเนินงาน
             </div>
             <div class="panel-body">
-                <ul class="list-group">
+                <!--<ul class="list-group">
                     <li class="list-group-item">Cras justo odio</li>
                     <li class="list-group-item">Dapibus ac facilisis in</li>
                     <li class="list-group-item">Morbi leo risus</li>
                     <li class="list-group-item">Porta ac consectetur ac</li>
                     <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
+                </ul>-->
             </div>
         </div>
     </div>
