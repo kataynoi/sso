@@ -50,5 +50,12 @@ class Base_data_model extends CI_Model
             ->get("structure")
             ->row();
         return $rs;
+    } public function get_vision()
+    {
+        $rs = $this->db
+            ->limit(1)
+            ->get("vision")
+            ->row();
+        return $rs;
     }
 }

@@ -53,6 +53,10 @@
                         <a href="<?php echo site_url('admin_authority') ?>"><i
                                 class="fa fa-angle-double-right  "></i> อำนาจหน้าที่</a>
                     </li>
+                    <li>
+                        <a href="<?php echo site_url('admin_vision') ?>"><i
+                                class="fa fa-angle-double-right  "></i> วิสัยทัศน์ พันธกิจ ค่านิยม</a>
+                    </li>
 
                 </ul>
                 <!-- /.nav-second-level -->

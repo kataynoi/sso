@@ -1,6 +1,6 @@
 ﻿<div class="panel panel-info">
     <div class="panel-heading">
-        ผู้บริหารหน่วยงาน
+        วิสัยทัศน์ พันธกิจ ค่านิยม
     </div>
     <div class="panel-body">
         <?php
