@@ -7,7 +7,7 @@ $link = $this->db->get('link')->result();
     padding-left: 320px;
     padding-right: 10%;
     padding-top:20px;">
-    <div class="row topic"> ลิงก์ที่เกี่ยวข้อง </div>
+    <div class="topic"> ลิงก์ที่เกี่ยวข้อง </div>
     <div class="row ">
         <hr class="hr_news1">
     </div>

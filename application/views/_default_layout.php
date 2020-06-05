@@ -51,12 +51,6 @@
     img.center {
         display: block;
         margin: 0 auto;
-        margin: 20px;
-    }
-    .border {
-        border:0px solid black;
-        padding-left: 15px;
-        padding-right: 15px;
     }
 </style>
 
@@ -89,37 +83,31 @@
 </script>
 <body >
 
-
 <div id="wrapper">
-    <div class="border row">
-        <nav class="navbar w3-theme" role="" style="margin-bottom: 0;">
-            <div >
-                <?php echo $header_for_layout?>
-            </div>
-        </nav>
-    </div>
-    <div class="border row">
-        <div class="border2 col-lg-2">
-            <div id="left_menu" style="padding-left: 2%; ">
-                <?php echo $left_for_layout?>
-            </div>
-        </div>
-        <div class="border col-lg-10">
-            <div id="page-wrapper" style="">
-                <!-- <button id="hide_left" data-show="true">Hide</button>-->
-                <?php echo $content_for_layout?>
-            </div>
-        </div>
-    </div>
-    <div class="border2 row">
-        <div class="cont">
-            <?php echo $footer_for_layout?>
-        </div>
-    </div>
-    <div id="freeow" class=" freeow freeow-info freeow-bottom-right"></div>
-</body>
-</div>
 
+    <!-- Navigation -->
+    <nav class="navbar w3-theme" role="" style="margin-bottom: 0;">
+        <div >
+            <?php echo $header_for_layout?>
+        </div>
+        <!-- /.navbar-static-side -->
+        <div id="left_menu" style="padding-left: 2%; ">
+            <?php echo $left_for_layout?>
+        </div>
+    </nav>
+    <div>
+        <div id="page-wrapper" style="padding-left: 3% ; padding-bottom: 200px">
+           <!-- <button id="hide_left" data-show="true">Hide</button>-->
+            <?php echo $content_for_layout?>
+        </div>
+    </div>
+
+</div>
+<div class="cont">
+    <?php echo $footer_for_layout?>
+</div>
+<div id="freeow" class=" freeow freeow-info freeow-bottom-right"></div>
+</body>
 
 </html>
 

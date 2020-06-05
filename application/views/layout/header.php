@@ -1,7 +1,7 @@
-<div class="navbar-header w3-theme">
+<div class="navbar-header w3-theme" style="padding: 10px">
     <a class="navbar-brand w3-theme" href="<?php echo base_url() ?>"><?php echo version(); ?>  </a>
     <a class="navbar-brand w3-theme"><?php echo $this->session->userdata('hosname') ?>
-    <?php echo " " . $this->session->userdata('fullname') . " " . $this->session->userdata('id') . "" ?></div></a>
+    <?php echo " " . $this->session->userdata('fullname') ?></div></a>
 <!-- /.navbar-header -->
 <ul class="nav navbar-top-links navbar-right w3-theme">
     <li class="dropdown">
@@ -19,7 +19,7 @@
             </li>
         </ul> ";
         } else {
-            echo "<a href='" . site_url('user/login') . "'>Login</a>";
+            echo "<a class=' btn navbar-brand btn-outline' style='margin-top:10px;' href='" . site_url('user/login') . "'><i class='fa fa-sign-in' fa-2x></i>  Login </a>";
         }
         ?>
 

@@ -1,12 +1,12 @@
 <?php
 $office = $this->db->get('chospital')->result_array();
 ?>
-<div class="sidebar w3-theme-l5" role="navigation" style="padding-top: 15px; margin-bottom: 300px">
+<div class="sidebar w3-theme-l5" role="navigation" style="padding-top: 15px;;background-color:transparent !important">
     <div class="panel panel-default">
 
         <div class="panel-body text-center">
             <img src="<?php echo base_url() . 'assets/images/users/' . $this->config->item('boss_id') . '.jpg'; ?>"
-                 class="img-responsive img-rounded" style="width:204px;height:auto;">
+                 class="img-responsive img-rounded" style="width:auto;height:auto;">
             <br> <?php echo $this->config->item('boss_name') . "<br>" . $this->config->item('boss_position'); ?>
         </div>
     </div>
