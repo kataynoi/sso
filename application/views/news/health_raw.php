@@ -99,5 +99,5 @@
 </div>
 
 
-<script src="<?php echo base_url() ?>assets/apps/js/news.js" charset="utf-8"></script>
+<script src="<?php echo base_url() ?>assets/apps/js/raw.js" charset="utf-8"></script>
 

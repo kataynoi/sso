@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         "pageLength": 50,
         "ajax": {
-            url: site_url + '/admin_news_category/fetch_admin_news_category',
+            url: site_url + '/news/fetch_raw',
             data: {
                 'csrf_token': csrf_token
             },
@@ -17,7 +17,6 @@ $(document).ready(function () {
         },
         "columnDefs": [
             {
-                "targets": [1, 2],
                 "orderable": false,
             },
         ],
@@ -29,7 +28,7 @@ var crud = {};
 
 crud.ajax = {
     del_data: function (id, cb) {
-        var url = '/admin_news_category/del_admin_news_category',
+        var url = '/news/del_news',
             params = {
                 id: id
             }
@@ -38,7 +37,7 @@ crud.ajax = {
             err ? cb(err) : cb(null, data);
         });
     }, save: function (items, cb) {
-        var url = '/admin_news_category/save_admin_news_category',
+        var url = '/news/save_news',
             params = {
                 items: items
             }
@@ -47,7 +46,7 @@ crud.ajax = {
             err ? cb(err) : cb(null, data);
         });
     }, get_update: function (id, cb) {
-        var url = '/admin_news_category/get_admin_news_category',
+        var url = '/news/get_news',
             params = {
                 id: id
             }
@@ -79,13 +78,9 @@ crud.save = function (items, row_id) {
             swal(err);
         }
         else {
-            if (items.action == 'insert') {
-                crud.set_after_insert(items, data.id);
-            } else if (items.action == 'update') {
-                crud.set_after_update(items, row_id);
-            }
             $('#frmModal').modal('toggle');
             swal('บันทึกข้อมูลเรียบร้อยแล้ว ');
+            location.reload();
         }
     });
 
@@ -112,14 +107,19 @@ crud.set_after_update = function (items, row_id) {
 
     var row_id = $('tr[name="' + row_id + '"]');
     row_id.find("td:eq(0)").html(items.id);
-    row_id.find("td:eq(1)").html(items.name);
-    row_id.find("td:eq(2)").html(items.dashboard);
+    row_id.find("td:eq(1)").html(items.topic);
+    row_id.find("td:eq(2)").html(items.detail);
+    row_id.find("td:eq(3)").html(items.date_sent);
+    row_id.find("td:eq(4)").html(items.user_id);
+    row_id.find("td:eq(5)").html(items.cat_id);
+    row_id.find("td:eq(6)").html(items.read);
+    row_id.find("td:eq(7)").html(items.files);
 
 }
 crud.set_after_insert = function (items, id) {
 
     $('<tr name="row' + (id + 1) + '"><td>' + id + '</td>' +
-        '<td>' + items.id + '</td>' + '<td>' + items.name + '</td>' + '<td>' + items.dashboard + '</td>' +
+        '<td>' + items.id + '</td>' + '<td>' + items.topic + '</td>' + '<td>' + items.detail + '</td>' + '<td>' + items.date_sent + '</td>' + '<td>' + items.user_id + '</td>' + '<td>' + items.cat_id + '</td>' + '<td>' + items.read + '</td>' + '<td>' + items.files + '</td>' +
         '<td><div class="btn-group pull-right" role="group">' +
         '<button class="btn btn-outline btn-success" data-btn="btn_view" data-id="' + id + '"><i class="fa fa-eye"></i></button>' +
         '<button class="btn btn-outline btn-warning" data-btn="btn_edit" data-id="' + id + '"><i class="fa fa-edit"></i></button>' +
@@ -131,25 +131,52 @@ crud.set_after_insert = function (items, id) {
 crud.set_update = function (data, row_id) {
     $("#row_id").val(row_id);
     $("#id").val(data.rows["id"]);
-    $("#name").val(data.rows["name"]);
-    $("#dashboard").val(data.rows["dashboard"]);
+    $("#topic").val(data.rows["topic"]);
+    $("#detail").val(data.rows["detail"]);
+    $("#date_sent").val(data.rows["date_sent"]);
+    $("#user_id").val(data.rows["user_id"]);
+    $("#cat_id").val(data.rows["cat_id"]);
+    $("#read").val(data.rows["read"]);
+    $("#file2").val(data.rows["file"]);
 }
 
-$('#btn_save').on('click', function (e) {
+$('#frm_news').submit(function (e) {
     e.preventDefault();
     var action;
     var items = {};
     var row_id = $("#row_id").val();
     items.action = $('#action').val();
-    // items.brand_name = $("#brand option:selected").text();
     items.id = $("#id").val();
-    items.name = $("#name").val();
-    items.dashboard = $("#dashboard").val();
-
+    items.topic = $("#topic").val();
+    items.detail = $("#detail").val();
+    //items.user_id = $("#user_id").val();
+    items.cat_id = $("#cat_id").val();
+    items.file = $("#file").val();
     if (validate(items)) {
-        crud.save(items, row_id);
-    }
 
+
+        if (items.file) {
+            $.ajax({
+                url: 'upload/do_upload_file/',
+                type: "post",
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                cache: false,
+                async: false,
+                success: function (data) {
+                    if (data.success) {
+                        items.file = data.file;
+                        crud.save(items, row_id);
+                    }
+                }
+            });
+
+        } else {
+            items.file = $("#file2").val();
+            crud.save(items, row_id);
+        }
+    }
 });
 
 $('#add_data').on('click', function (e) {
@@ -158,7 +185,6 @@ $('#add_data').on('click', function (e) {
     $("#frmModal select").prop('disabled', false);
     $("#frmModal textarea").prop('disabled', false);
     $("#frmModal .btn").prop('disabled', false);
-    $('#action').val('insert');
     app.clear_form();
 });
 
@@ -218,12 +244,15 @@ $(document).on('click', 'button[data-btn="btn_view"]', function (e) {
 
 function validate(items) {
 
-    if (!items.name) {
-        swal("กรุณาระบุชื่อหมวดหมู่");
-        $("#name").focus();
-    } else if (!items.dashboard) {
-        swal("กรุณาระบุแสดงหน้าหลัก");
-        $("#dashboard").focus();
+    if (!items.topic) {
+        swal("กรุณาระบุหัวข้อ");
+        $("#topic").focus();
+    } else if (!items.detail) {
+        swal("กรุณาระบุรายละเอียด");
+        $("#detail").focus();
+    } else if (!items.cat_id) {
+        swal("กรุณาระบุหมวดหมู่");
+        $("#cat_id").focus();
     }
     else {
         return true;

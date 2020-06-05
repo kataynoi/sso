@@ -1,4 +1,4 @@
-<div class="sidebar w3-theme-l5" role="navigation" style="padding-top: 15px;margin-top: 54px;">
+<div class="sidebar w3-theme-l5" role="navigation" >
     <div class="sidebar-nav navbar-collapse" id="left_slide">
         <ul class="nav" id="side-menu">
             <li class="sidebar-search">

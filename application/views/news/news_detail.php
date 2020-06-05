@@ -1,11 +1,4 @@
-﻿<script>
-    $('#left_menu').hide();
-</script>
-<style>
-    #page-wrapper {
-        margin-left: 0px;
-    }
-</style>
+﻿
 <div class="row">
     <div class="panel panel-primary">
         <div class="panel-heading w3-theme"><?php echo $news->topic; ?></div>

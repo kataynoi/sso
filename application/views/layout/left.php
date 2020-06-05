@@ -35,10 +35,7 @@ $office = $this->db->get('chospital')->result_array();
                         <a href="<?php echo site_url('base_data/authority') ?>"><i class="fas fa-chart-line"></i> อำนาจหน้าที่ </a>
                     </li>
 
-                    <li>
-                        <a href="<?php echo site_url('scanner') ?>"><i class="fas fa-chart-line"></i>
-                            กฏหมายสาธารณสุข</a>
-                    </li>
+
 
                 </ul>
             </div>
@@ -54,6 +51,10 @@ $office = $this->db->get('chospital')->result_array();
                     <li>
                         <a href="<?php echo site_url('news') ?>"><i class="fas fa-chart-line"></i>
                             ข่าวประชาสัมพันธ์ทั้งหมด </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('news/raw') ?>"><i class="fas fa-chart-line"></i>
+                            กฏหมายสาธารณสุข</a>
                     </li>
 
                 </ul>

@@ -9,17 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <?PHP
+    $theme = 'https://www.w3schools.com/lib/w3-theme-blue.css'; ?>
     <title><?php echo version();?></title>
     <script src="<?php echo base_url()?>assets/vendor/js/jquery.min.js"></script>
     <script src="<?php echo base_url()?>assets/vendor/js/jquery.blockUI.js"></script>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url()?>assets/vendor/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/vendor/css/style.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
     <link href="<?php echo base_url()?>assets/vendor/css/metisMenu.min.css" rel="stylesheet">
     <!--<link href="<?php /*echo base_url()*/?>assets/vendor/css/left.css" rel="stylesheet"-->
     <!-- Custom CSS -->
     <link href="<?php echo base_url()?>assets/vendor/css/sb-admin-2.min.css" rel="stylesheet">
+
     <link href="<?php echo base_url()?>assets/vendor/css/freeow.css" rel="stylesheet">
     <!--Set Color Page-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -43,13 +46,19 @@
 <style>
     body {
         font-family: 'Kanit', sans-serif;
-        font-size: 90%;
+        font-size: 100%;
+    }
+    img.center {
+        display: block;
+        margin: 0 auto;
+        margin: 20px;
+    }
+    .border {
+        border:0px solid black;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 </style>
-<!-- Custom Fonts -->
-
-<!-- jQuery -->
-
 
 <!-- Bootstrap Core JavaScript -->
 <script src="<?php echo base_url()?>assets/vendor/js/bootstrap.min.js"></script>
@@ -75,38 +84,37 @@
 <script type="text/javascript" charset="utf-8">
     var site_url = '<?php echo site_url()?>';
     var base_url = '<?php echo base_url()?>';
+    var year    ='<?php echo date('Y')+543;?>'
     var csrf_token = '<?php echo $this->security->get_csrf_hash(); ?>';
 </script>
 <body >
-<?php $this->session->set_userdata('admin','admin');?>
+
+
 <div id="wrapper">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top w3-theme" role="navigation" style="margin-bottom: 0">
-        <div >
-            <?php echo $header_for_layout?>
+    <div class="border row">
+        <nav class="navbar w3-theme" role="" style="margin-bottom: 0;">
+            <div >
+                <?php echo $header_for_layout?>
+            </div>
+        </nav>
+    </div>
+    <div class="border row">
+        <div class="border2 col-lg-2">
+            <div id="left_menu" style="padding-left: 2%; ">
+                <?php echo $left_for_layout?>
+            </div>
         </div>
-        <!-- /.navbar-static-side -->
-        <div id="left_menu">
-            <?php echo $left_for_layout?>
-        </div>
-        <!-- /.navbar-static-side -->
-    </nav>
-    <div>
-        <div id="page-wrapper">
-           <!-- <button id="hide_left" data-show="true">Hide</button>-->
-            <?php echo $content_for_layout?>
+        <div class="border col-lg-10">
+            <div id="page-wrapper" style="">
+                <!-- <button id="hide_left" data-show="true">Hide</button>-->
+                <?php echo $content_for_layout?>
+            </div>
         </div>
     </div>
-    <div>
-        <?php echo $footer_for_layout?>
-    </div>
-
-    <!-- /#page-wrapper -->
-
-</div>
-<div id="freeow" class=" badge badge-success freeow-bottom-right"></div>
+    <div id="freeow" class=" freeow freeow-info freeow-bottom-right"></div>
 </body>
+</div>
+
 
 </html>
 

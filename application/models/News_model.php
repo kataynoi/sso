@@ -12,7 +12,7 @@ class News_model extends CI_Model
     var $table = "news";
     var $order_column = Array('id', 'topic', 'detail', 'date_sent', 'user_id', 'cat_id', 'read', 'files',);
 
-    function make_query()
+    function make_query($id)
     {
         $this->db->from($this->table);
         if (isset($_POST["search"]["value"])) {
@@ -22,7 +22,9 @@ class News_model extends CI_Model
             $this->db->group_end();
 
         }
-
+        if (!empty($id)){
+            $this->db->where('cat_id', $id);
+        }
         if (isset($_POST["order"])) {
             $this->db->order_by($this->order_column[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
         } else {
@@ -30,9 +32,9 @@ class News_model extends CI_Model
         }
     }
 
-    function make_datatables()
+    function make_datatables($id='')
     {
-        $this->make_query();
+        $this->make_query($id);
         if ($_POST["length"] != -1) {
             $this->db->limit($_POST['length'], $_POST['start']);
         }
@@ -42,7 +44,7 @@ class News_model extends CI_Model
 
     function get_filtered_data()
     {
-        $this->make_query();
+        $this->make_query('');
         $query = $this->db->get();
         return $query->num_rows();
     }
