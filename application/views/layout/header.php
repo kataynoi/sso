@@ -14,6 +14,8 @@
             <ul class='dropdown-menu dropdown-user'>
             <li><a href=" . site_url('user/user_profile/') . $this->session->userdata('id') . "><i class='fa fa-user fa-fw'></i> User Profile</a>
             </li>
+             <li><a href=" . site_url('admin/') . $this->session->userdata('id') . "><i class='fa fa-user fa-fw'></i>Admin</a>
+            </li>
             <li class='divider'></li>
             <li><a href=" . site_url('user/logout') . "><i class='fa fa-sign-out fa-fw'></i> Logout</a>
             </li>
