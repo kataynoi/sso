@@ -24,8 +24,5 @@
             echo "<a class=' btn navbar-brand btn-outline' style='margin-top:10px;' href='" . site_url('user/login') . "'><i class='fa fa-sign-in' fa-2x></i>  Login </a>";
         }
         ?>
-
-        <!-- /.dropdown-user -->
     </li>
-    <!-- /.dropdown -->
 </ul>
