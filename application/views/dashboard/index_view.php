@@ -157,7 +157,10 @@
     <div class='col col-lg-12'>
         <div class="panel panel-default ">
             <div class="panel-heading w3-theme-l2">
-                การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ (Integrity & Transparency Assessment : ITA)
+                การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานของหน่วยงานภาครัฐ (Integrity & Transparency Assessment : ITA) ปีงบประมาณ 
+                <?php 
+                echo $this->session->userdata('n_year');
+                ?>
             </div>
             <div class="panel-body">
                 <table class=" table table-responsive" id="tbl_ita">

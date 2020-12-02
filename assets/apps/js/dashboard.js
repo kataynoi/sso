@@ -83,7 +83,7 @@ $(function () {
         }
     });
 
-    report.get_ita(year);
+    report.get_ita(n_year);
     $('.tr2').hide();
 });
 
