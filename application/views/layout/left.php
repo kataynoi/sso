@@ -1,6 +1,6 @@
 <?php
 $office = $this->db->get('chospital')->result_array();
-echo "Year : ".$this->session->userdata('n_year');
+//echo "Year : ".$this->session->userdata('n_year');
 ?>
 
 <div class="sidebar w3-theme-l5" role="navigation" style="padding-top: 15px;;background-color:transparent !important">
