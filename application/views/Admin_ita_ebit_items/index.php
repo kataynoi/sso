@@ -45,7 +45,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">เพิ่มรายการ Ebit</h4>
+                <h4 class="modal-title">เพิ่มรายการ Ebit <?php echo $this->session->userdata('n_year');?></h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -69,21 +69,12 @@
                             echo "<option value=$r->id > $r->name </option>";
                         } ?>
                     </select></div>
-                <div class="form-group">
-                    <label for="n_year">ปีงบประมาณ</label>
-                    <select class="form-control" id="n_year" value="">
-                        <option value="2563"> 2563</option>
-                        <option value="2564"> 2564</option>
-                        <option value="2565"> 2565</option>
-                        <option value="2566"> 2566</option>
-                        <option value="2567"> 2567</option>
-                        <option value="2568"> 2568</option>
-                        <option value="2569"> 2569</option>
-                    </select>
+ 
 
                 <div class="form-group">
                     <label for="link">Link</label>
-                    <input type="text" class="form-control" id="link" placeholder="Link" value=""></div>
+                    <input type="text" class="form-control" id="link" placeholder="Link" value="">
+                </div>
                 <div class="form-group">
                     <label for="file">ไฟล์</label>
                     <input type="hidden" class="form-control" id="file2" value="">

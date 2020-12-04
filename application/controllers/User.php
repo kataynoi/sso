@@ -114,5 +114,9 @@ class User extends CI_Controller
 		render_json($json);
 
 	}
+	public function switch_n_year(){
+		
+		$this->layout->view('user/switch_n_year');
+	}
 
 }// ของ Class

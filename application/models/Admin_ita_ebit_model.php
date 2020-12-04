@@ -31,11 +31,12 @@ class Admin_ita_ebit_model extends CI_Model
 
     function make_datatables()
     {
+        $n_year = $this->session->userdata('n_year');
         $this->make_query();
         if ($_POST["length"] != -1) {
             $this->db->limit($_POST['length'], $_POST['start']);
         }
-        $query = $this->db->get();
+        $query = $this->db->where('n_year',$n_year)->get();
         return $query->result();
     }
     function get_filtered_data()

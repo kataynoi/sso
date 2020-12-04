@@ -5,6 +5,7 @@ class Admin_ita_ebit_items extends CI_Controller
 {
     public $user_id;
 
+
     public function __construct()
     {
         parent::__construct();
@@ -14,6 +15,7 @@ class Admin_ita_ebit_items extends CI_Controller
         $this->layout->setLeft("layout/left_admin");
         $this->layout->setLayout("admin_layout");
         $this->load->model('Admin_ita_ebit_items_model', 'crud');
+       
     }
 
     public function index()

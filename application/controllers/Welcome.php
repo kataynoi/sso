@@ -48,4 +48,10 @@ class Welcome extends CI_Controller
         $json = $rs ? '{"success": "true", "rows": ' . json_encode($arr_result) . '}' : '{"success": false, "msg": "ไม่พบข้อมูล"}';
         render_json($json);
     }
+    public function save_n_year(){
+        $n_year=$this->input->post('n_year');
+        $this->session->set_userdata('n_year',$n_year);
+        $json ='{"success": "true"}';
+        render_json($json);
+    }
 }
