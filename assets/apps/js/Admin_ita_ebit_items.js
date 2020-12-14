@@ -79,7 +79,7 @@ crud.save = function (items, row_id) {
             swal(err);
             console.log(err);
             $('#frmModal').modal('toggle');
-            //location.reload();
+            location.reload();
 
         }
         else {
@@ -90,7 +90,7 @@ crud.save = function (items, row_id) {
             }*/
             $('#frmModal').modal('toggle');
             swal('บันทึกข้อมูลเรียบร้อยแล้ว ');
-            //location.reload();
+            location.reload();
         }
     });
 
