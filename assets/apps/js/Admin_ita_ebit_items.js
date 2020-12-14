@@ -90,7 +90,7 @@ crud.save = function (items, row_id) {
             }*/
             $('#frmModal').modal('toggle');
             swal('บันทึกข้อมูลเรียบร้อยแล้ว ');
-            location.reload();
+            //location.reload();
         }
     });
 
@@ -141,7 +141,8 @@ crud.set_update = function (data, row_id) {
     $("#id").val(data.rows["id"]);
     $("#name").val(data.rows["name"]);
     $("#ita_ebit").val(data.rows["ita_ebit"]);
-    $("#n_year").val(data.rows["n_year"]);
+    $("#n_year_edit").val(data.rows["n_year"]);
+    //alert(data.rows["n_year"]);
     $("#link").val(data.rows["link"]);
     $("#file2").val(data.rows["file"]);
 }
@@ -157,7 +158,7 @@ $('#frm_ita_ebit_item').submit(function (e) {
     items.id = $("#id").val();
     items.name = $("#name").val();
     items.ita_ebit = $("#ita_ebit").val();
-    items.n_year = $("#n_year").val();
+    items.n_year = $("#n_year_edit").val();
     items.link = $("#link").val();
     items.file = $("#file").val();
     if (validate(items)) {
@@ -191,7 +192,9 @@ $('#add_data').on('click', function (e) {
     $("#frmModal select").prop('disabled', false);
     $("#frmModal textarea").prop('disabled', false);
     $("#frmModal .btn").prop('disabled', false);
+    var n_year = $("#n_year_edit").val();
     app.clear_form();
+    $("#n_year_edit").val(n_year);
 });
 
 $(document).on('click', 'button[data-btn="btn_del"]', function (e) {

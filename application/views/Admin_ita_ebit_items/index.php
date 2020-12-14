@@ -53,7 +53,7 @@
             <form id="frm_ita_ebit_item" method="post" enctype="multipart/form-data">
             <div class="modal-body">
                 <input type="hidden" id="action" value="insert">
-                <input type="hidden" id="n_year" value="<?php echo $this->session->userdata('n_year');?>">
+                <input type="hidden" id="n_year_edit" value="<?php echo $this->session->userdata('n_year');?>">
                 <input type="hidden" class="form-control" id="row_id" placeholder="ROWID" value="">
 
 
