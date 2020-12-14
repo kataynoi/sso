@@ -256,9 +256,6 @@ function validate(items) {
     } else if (!items.ita_ebit) {
         swal("กรุณาระบุEbit");
         $("#ita_ebit").focus();
-    } else if (!items.n_year) {
-        swal("กรุณาระบุปีงบประมาณ");
-        $("#n_year").focus();
     }
     else {
         return true;
