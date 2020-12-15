@@ -56,7 +56,7 @@
             </div>
 
             <!-- Modal body -->
-            <form id="frm_news" >
+            <form id="frm_news" method="post" enctype="multipart/form-data" >
             <div class="modal-body">
 
                 <input type="hidden" id="action" value="insert">

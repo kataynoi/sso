@@ -1,5 +1,6 @@
 <?php
 
+
 if (!function_exists('render_json')) {
     function render_json($json)
     {
@@ -603,6 +604,5 @@ if (!function_exists('DateFormatDiff')) {
         return $text;
     }
 }
-
 /* End of file epidem_helper.php */
 /* Location: ./application/helpers/epidem_helper.php */

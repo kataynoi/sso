@@ -40,7 +40,7 @@
                <span style="color: black;">ตั้งค่าปีงบประมาณ</span>
             </div>
             <!-- Modal body -->
-            <form id="frm_news">
+            <form id="frm_n_year">
                 <div class="modal-body">
 
                     <div class="form-group">
